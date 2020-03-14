@@ -5,6 +5,11 @@ services:
     image: postgres
     environment:
       POSTGRES_PASSWORD: password
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
   web:
     image: app
     command: python manage.py runserver 0.0.0.0:8000
